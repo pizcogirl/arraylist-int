@@ -79,4 +79,12 @@ public class ArrayListInt
             System.out.println("El indice indicado no es valido, utiliza un valor entre 0 y " + tamanio);
         }
     }
+    
+    /**
+     * Metodo para vaciar una colección
+     */
+    public void clear()
+    {
+        lista = new int[0];
+    }
 }
