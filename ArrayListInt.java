@@ -128,6 +128,35 @@ public class ArrayListInt
     }
 
     /**
+     * Metodo que añade un elemento a la arrayList en la posicion indicada
+     * @param index La posición donde colocar el numero
+     * @param elemento El elemento a añadir
+     */
+    public void set( int index, int elemento)
+    {
+        // Comprobamos que sea un indice valido, es decir, que se encuentre en el 
+        // tamaño de la lista
+        // de lo contrario muestra un mensaje de error
+        int tamanio = lista.length;
+        if ((index < tamanio) && (index >= 0))
+        {
+            // Creamos una lista temporal, transpasamos todos los numeros con un
+            // while, pero al llegar al indice indicado introducimos el numero introducido
+            // como parametro
+            int[] temporal = new int[tamanio];
+            int indice = 0;
+            while(indice < tamanio)
+            {
+
+                temporal[indice] = lista[indice];
+                indice++;
+            }
+            // Por ultimo pasamos la lista temporal a lista
+            lista = temporal;
+        }
+    }
+
+    /**
      * Metodo que devuelve el indice de la primera ocurrencia del ememento
      * introducido como parametro.
      * @param El elemento a buscar su posicion
@@ -171,7 +200,7 @@ public class ArrayListInt
     /**
      * Metodo que elimina el elemento de la array en la posicion indicada
      * @param index La posición donde colocar el numero
-     * @return El numero si el indice es valido, si no nada
+     * @return El numero si el indice es valido, si no devuelve -1
      */
     public int remove( int index)
     {
@@ -179,16 +208,16 @@ public class ArrayListInt
         // tamaño de la lista
         // de lo contrario muestra un mensaje de error
         int tamanio = lista.length;
-        if ((index <= tamanio) && (index >= 0))
+        int eliminado = -1;
+        if ((index <= tamanio) && (index >= 0) && (tamanio != 0))
         {
             // Creamos una lista temporal, transpasamos todos los numeros con un
             // while, pero al llegar al indice indicado eliminamos ese numero introducido
             // como parametro y continuamos
-            int[] temporal = new int[tamanio - 1];
+            int[] temporal = new int[tamanio];
             int indiceTemp = 0;
             int indiceLista = 0;
-            int eliminado = 0;
-            while(indiceLista < (tamanio -1))
+            while(indiceLista < (tamanio))
             {
                 if(indiceTemp != index)
                 {
@@ -203,8 +232,8 @@ public class ArrayListInt
             }
             // Por ultimo pasamos la lista temporal a lista
             lista = temporal;
-            return eliminado;
         }
+        return eliminado;
     }
 
     /**
