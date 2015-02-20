@@ -185,7 +185,7 @@ public class ArrayListInt
      * @param index La posición donde colocar el numero
      * @return El numero si el indice es valido, si no devuelve -1
      */
-    public int remove( int index)
+    public int remove(int index)
     {
         // Comprobamos que sea un indice valido, es decir, que se encuentre en el 
         // tamaño de la lista
@@ -197,7 +197,7 @@ public class ArrayListInt
             // Creamos una lista temporal, transpasamos todos los numeros con un
             // while, pero al llegar al indice indicado eliminamos ese numero introducido
             // como parametro y continuamos
-            int[] temporal = new int[tamanio];
+            int[] temporal = new int[tamanio - 1];
             int indiceTemp = 0;
             int indiceLista = 0;
             while(indiceLista < (tamanio))
