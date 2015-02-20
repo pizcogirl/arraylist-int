@@ -79,7 +79,7 @@ public class ArrayListInt
             System.out.println("El indice indicado no es valido, utiliza un valor entre 0 y " + tamanio);
         }
     }
-    
+
     /**
      * Metodo para vaciar una colección
      */
@@ -87,7 +87,7 @@ public class ArrayListInt
     {
         lista = new int[0];
     }
-    
+
     /**
      * Metodo que devuelve true si el array contiene ese elemento
      * @param elemento El elemento a buscar
@@ -108,7 +108,7 @@ public class ArrayListInt
         }
         return encontrado;
     }
-    
+
     /**
      * Metodo que devuelve el elemento que se encuentra
      * en la posicion introducida.
@@ -125,5 +125,29 @@ public class ArrayListInt
             elemento = lista[index];
         }
         return elemento;
+    }
+
+    /**
+     * Metodo que devuelve el indice de la primera ocurrencia del ememento
+     * introducido como parametro.
+     * @param elemento La posicion del elemento introducido, o -1 si no se encuentra
+     */
+    public int indexOf(int elemento)
+    {
+        // Creamos el boolean que devolveremos como false y un indice
+        boolean encontrado = false;
+        int indice = 0;
+        // Inicializamos el elemento buscado en -1, si se encuentra cambiara de valor
+        int elemBuscado = -1;
+        while (indice < lista.length && !(encontrado))
+        {
+            if (lista[indice] == elemento)
+            {
+                encontrado = true;
+                elemBuscado = indice;
+            }
+            indice++;
+        }
+        return elemBuscado;
     }
 }
