@@ -130,7 +130,8 @@ public class ArrayListInt
     /**
      * Metodo que devuelve el indice de la primera ocurrencia del ememento
      * introducido como parametro.
-     * @param elemento La posicion del elemento introducido, o -1 si no se encuentra
+     * @param El elemento a buscar su posicion
+     * @return La posicion del elemento introducido, o -1 si no se encuentra
      */
     public int indexOf(int elemento)
     {
@@ -150,4 +151,21 @@ public class ArrayListInt
         }
         return elemBuscado;
     }
+    
+    /**
+     * Metodo que devuelve si la lista esta varia
+     * @return True si esta vacia, false en caso contrario
+     */
+    public boolean isEmpty()
+    {
+        // Creamos un boolean para devolver, si el tamaño de la coleccion
+        // es 0, estara vacia y cambiara a true
+        boolean vacia = false;
+        if (lista.length == 0)
+        {
+            vacia = true;
+        }
+        return vacia;
+    }
+    
 }
