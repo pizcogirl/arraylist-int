@@ -151,7 +151,7 @@ public class ArrayListInt
         }
         return elemBuscado;
     }
-    
+
     /**
      * Metodo que devuelve si la lista esta varia
      * @return True si esta vacia, false en caso contrario
@@ -167,5 +167,53 @@ public class ArrayListInt
         }
         return vacia;
     }
-    
+
+    /**
+     * Metodo que elimina el elemento de la array en la posicion indicada
+     * @param index La posición donde colocar el numero
+     * @return El numero si el indice es valido, si no nada
+     */
+    public int remove( int index)
+    {
+        // Comprobamos que sea un indice valido, es decir, que se encuentre en el 
+        // tamaño de la lista
+        // de lo contrario muestra un mensaje de error
+        int tamanio = lista.length;
+        if ((index <= tamanio) && (index >= 0))
+        {
+            // Creamos una lista temporal, transpasamos todos los numeros con un
+            // while, pero al llegar al indice indicado eliminamos ese numero introducido
+            // como parametro y continuamos
+            int[] temporal = new int[tamanio - 1];
+            int indiceTemp = 0;
+            int indiceLista = 0;
+            int eliminado = 0;
+            while(indiceLista < (tamanio -1))
+            {
+                if(indiceTemp != index)
+                {
+                    temporal[indiceTemp] = lista[indiceLista];
+                    indiceTemp++;
+                }
+                else
+                {
+                    eliminado = lista[indiceLista];
+                }
+                indiceLista++;
+            }
+            // Por ultimo pasamos la lista temporal a lista
+            lista = temporal;
+            return eliminado;
+        }
+    }
+
+    /**
+     * Metodo que devuelve el tamaño de la coleccion
+     * @return el tamaño de la coleccion
+     */
+    public int size()
+    {
+        return lista.length;
+    }
+
 }
