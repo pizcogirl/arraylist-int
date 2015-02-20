@@ -22,9 +22,9 @@ public class ArrayListInt
 
     /**
      * Metodo que añade un elemento a la arrayList
-     * @param numero El numero a añadir
+     * @param elemento El elemento a añadir
      */
-    public void add(int numero)
+    public void add(int elemento)
     {
         // Creamos una lista temporal, transpasamos todos los numeros con un
         // for, y añadimos el numero en la ultima posicion
@@ -34,7 +34,7 @@ public class ArrayListInt
         {
             temporal[i] = lista[i];
         }
-        temporal[tamanio] = numero;
+        temporal[tamanio] = elemento;
         // Por ultimo pasamos la lista temporal a lista
         lista = temporal;
     }
@@ -42,9 +42,9 @@ public class ArrayListInt
     /**
      * Metodo que añade un elemento a la arrayList en la posicion indicada
      * @param index La posición donde colocar el numero
-     * @param numero El numero a añadir
+     * @param elemento El elemento a añadir
      */
-    public void add( int index, int numero)
+    public void add( int index, int elemento)
     {
         // Comprobamos que sea un indice valido, es decir, que se encuentre en el 
         // tamaño de la lista
@@ -62,7 +62,7 @@ public class ArrayListInt
             {
                 if(indiceTemp == index)
                 {
-                    temporal[indiceTemp] = numero;
+                    temporal[indiceTemp] = elemento;
                 }
                 else
                 {
@@ -86,5 +86,26 @@ public class ArrayListInt
     public void clear()
     {
         lista = new int[0];
+    }
+    
+    /**
+     * Metodo que devuelve true si el array contiene ese elemento
+     * @param elemento El elemento a buscar
+     * @return True si lo contiene, false si no
+     */
+    public boolean contains(int elemento)
+    {
+        // Creamos el boolean que devolveremos como false y un indice
+        boolean encontrado = false;
+        int indice = 0;
+        while (indice < lista.length && !(encontrado))
+        {
+            if (lista[indice] == elemento)
+            {
+                encontrado = true;
+            }
+            indice++;
+        }
+        return encontrado;
     }
 }
