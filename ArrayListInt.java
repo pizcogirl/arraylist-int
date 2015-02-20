@@ -140,19 +140,8 @@ public class ArrayListInt
         int tamanio = lista.length;
         if ((index < tamanio) && (index >= 0))
         {
-            // Creamos una lista temporal, transpasamos todos los numeros con un
-            // while, pero al llegar al indice indicado introducimos el numero introducido
-            // como parametro
-            int[] temporal = new int[tamanio];
-            int indice = 0;
-            while(indice < tamanio)
-            {
-
-                temporal[indice] = lista[indice];
-                indice++;
-            }
-            // Por ultimo pasamos la lista temporal a lista
-            lista = temporal;
+           // Cambiamos el elemento de la posicion indicada 
+           lista[index] = elemento;
         }
     }
 
@@ -187,14 +176,7 @@ public class ArrayListInt
      */
     public boolean isEmpty()
     {
-        // Creamos un boolean para devolver, si el tamaño de la coleccion
-        // es 0, estara vacia y cambiara a true
-        boolean vacia = false;
-        if (lista.length == 0)
-        {
-            vacia = true;
-        }
-        return vacia;
+        return (lista.length == 0);
     }
 
     /**
