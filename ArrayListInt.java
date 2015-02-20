@@ -129,6 +129,7 @@ public class ArrayListInt
 
     /**
      * Metodo que añade un elemento a la arrayList en la posicion indicada
+     * sobreecribiendo el que se encontraba en esa posición
      * @param index La posición donde colocar el numero
      * @param elemento El elemento a añadir
      */
