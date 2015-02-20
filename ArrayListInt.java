@@ -108,4 +108,22 @@ public class ArrayListInt
         }
         return encontrado;
     }
+    
+    /**
+     * Metodo que devuelve el elemento que se encuentra
+     * en la posicion introducida.
+     * @return El elemento en esa posicion. Si el valor no es valido
+     * devuelve -1.
+     */
+    public int get(int index)
+    {
+        // Inicializamos el valor a devolver a -1, si es un indice
+        // valido le cambiamos el valor
+        int elemento = -1;
+        if (index >= 0 && index < lista.length)
+        {
+            elemento = lista[index];
+        }
+        return elemento;
+    }
 }
